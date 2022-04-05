@@ -55,6 +55,7 @@ const userCtrl = {
             console.log(accesstoken)
 
             res.cookie('refreshtoken', refreshtoken)
+            res.cookie('access', accesstoken)
             //res.cookie('ll', 'cookie_valueee')
 
 
