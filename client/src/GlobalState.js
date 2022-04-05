@@ -4,11 +4,11 @@ import UserApi from './api/UserApi'
 import CategoriesAPI from './api/CategoriesAPI'
 
 
-import axios from 'axios'
-axios.defaults.withCredentials=true
-
 export const GlobalState = createContext()
 
+
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 export const DataProvider = ({children}) =>{
     const [token, setToken] = useState(false)
