@@ -11,11 +11,12 @@ function Header() {
     const state = useContext(GlobalState)
     const [isLogged] = state.userAPI.isLogged
     const [isAdmin] = state.userAPI.isAdmin
+    console.log('admin',isAdmin)
     const [cart] = state.userAPI.cart
     const [menu, setMenu] = useState(false)
 
     const logoutUser = async () =>{
-        await axios.get('http://localhost:2500/user/logout')
+        await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/logout')
         
         localStorage.removeItem('firstLogin')
         
