@@ -34,7 +34,6 @@ export const DataProvider = ({children}) =>{
             refreshToken()
         }
     },[])
-    console.log('outside token',token)
 
 
     
