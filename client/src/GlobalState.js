@@ -13,7 +13,7 @@ export const GlobalState = createContext()
 
 export const DataProvider = ({children}) =>{
     const [token, setToken] = useState(false)
-    const res = await axios.get('user/refresh_token')
+    const res = axios.get('user/refresh_token')
     setToken(res.data.accesstoken)
     console.log('token',res)
 
