@@ -7,7 +7,6 @@ const path = require('path')
 
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
-const productRoute = require("./routes/product");
 const cors = require("cors");
 const fileupload = require('express-fileupload')
 app.use(fileupload({
@@ -19,7 +18,7 @@ app.use(express.json())
 
 app.use(function(req, res, next) {  
     res.header('Access-Control-Allow-Origin', req.headers.origin);
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,'POST, GET, OPTIONS")
     next();
 });  
 
@@ -47,7 +46,6 @@ mongoose
 
 //app.use(cors());
 app.use(express.json());
-app.use("/api", productRoute);
 app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/productRouter'))
