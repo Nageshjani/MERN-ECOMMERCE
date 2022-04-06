@@ -16,7 +16,7 @@ function Login() {
         e.preventDefault()
         try {
             const  res=await axios.post('https://mern-ecommerce-forall.herokuapp.com/user/login', {...user})
-            alert('res')
+            //alert('res')
 
             localStorage.setItem('firstLogin', true)
             
