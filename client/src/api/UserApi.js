@@ -12,7 +12,7 @@ function UserAPI(token) {
         if(token){
             const getUser = async () =>{
                 try {
-                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/infor', {
+                    const res = await axios.get('user/infor', {
                         headers: {Authorization: token}
                     })
                    

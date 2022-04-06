@@ -18,7 +18,7 @@ export const DataProvider = ({children}) =>{
         if(firstLogin){
             const refreshToken = async () =>{
                 try{
-                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/refresh_token')
+                    const res = await axios.get('user/refresh_token')
                     setToken(res.data.accesstoken)
                     console.log('token',res)
                     setTimeout(() => {
