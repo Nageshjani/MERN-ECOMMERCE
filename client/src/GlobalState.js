@@ -1,10 +1,12 @@
 import React, {createContext, useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProductsAPI from './api/ProductsAPI'
 import UserApi from './api/UserApi'
 import CategoriesAPI from './api/CategoriesAPI'
 
 
 import axios from 'axios'
+import { Navigate } from 'react-router-dom'
 axios.defaults.withCredentials=true
 
 
@@ -14,6 +16,7 @@ export const GlobalState = createContext()
 export const DataProvider = ({children}) =>{
     const [callback,setCallback]=useState(false)
     const [token, setToken] = useState(false)
+    const navigate=useNavigate()
     alert("inside Data Provider")
     useEffect(() =>{
         const firstLogin = localStorage.getItem('firstLogin')
@@ -22,11 +25,11 @@ export const DataProvider = ({children}) =>{
         if(firstLogin){
             const refreshToken = async () =>{
                 alert('inside refresh token')
-                setCallback(!callback)
                 const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/refresh_token')
         
                 setToken(res.data.accesstoken)
                 console.log('token',res)
+                navigate('/')
                
     
                 setTimeout(() => {
@@ -35,7 +38,7 @@ export const DataProvider = ({children}) =>{
             }
             refreshToken()
         }
-    },[callback])
+    },[])
 
 
     
