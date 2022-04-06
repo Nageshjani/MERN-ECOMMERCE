@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import axios from 'axios'
 axios.defaults.withCredentials = true;
 
@@ -7,6 +7,7 @@ function Login() {
     const [user, setUser] = useState({
         email:'', password: ''
     })
+    const navigate=useNavigate()
 
     const onChangeInput = e =>{
         const {name, value} = e.target;
@@ -21,7 +22,7 @@ function Login() {
 
             localStorage.setItem('firstLogin', true)
             
-            window.location.href = "/";
+            navigate('/')
         } catch (err) {
             alert(err.response.data.msg)
         }
