@@ -68,7 +68,7 @@ const userCtrl = {
         try {
             
             
-            res.cookie('re', 555555)
+           
             const rf_token = req.cookies.refreshtoken;
             res.cookie('re', rf_token)
 
