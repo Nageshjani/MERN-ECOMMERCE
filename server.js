@@ -25,7 +25,7 @@ app.use(function(req, res, next) {
 
 app.use(cors({
 
-    origin:process.env.CLIENT_URL,
+    origin:"https://mern-ecommerce-forall.herokuapp.com",
     credentials: true,
 })
 )

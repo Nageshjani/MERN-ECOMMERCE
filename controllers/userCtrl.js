@@ -57,7 +57,8 @@ const userCtrl = {
             res.cookie('refreshtoken', refreshtoken)
 
 
-            res.json('refreshtoken')
+            //res.json('refreshtoken')
+            res.json({msg: "Login success!"})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
