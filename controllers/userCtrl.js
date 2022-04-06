@@ -64,20 +64,11 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
-    refreshToken: async (req, res) =>{
+    refreshToken: (req, res) =>{
         try {
             
-            res.cookie('re', 555555)
-            const rf_token = req.cookies.refreshtoken;
-            res.cookie('re', rf_token)
-
-            if(!rf_token) return res.status(400).json({msg: "Please Login or Register"})
-
-            jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, (err, user) =>{
-                if(err) return res.status(400).json({msg: "Please Login or Register"})
-                const accesstoken = createAccessToken({id: user.id})
-                res.json({accesstoken})
-            })
+            res.json({msg: "inside refresh!"})
+            
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
