@@ -15,13 +15,13 @@ function OrderHistory() {
         if(token){
             const getHistory = async() =>{
                 if(isAdmin){
-                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/api/payment', {
+                    const res = await axios.get('api/payment', {
                         headers: {Authorization: token}
                     })
                     console.log('payment',res)
                     setHistory(res.data)
                 }else{
-                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/history', {
+                    const res = await axios.get('user/history', {
                         headers: {Authorization: token}
                     })
                     setHistory(res.data)

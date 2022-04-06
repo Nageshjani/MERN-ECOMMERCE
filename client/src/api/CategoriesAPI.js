@@ -8,7 +8,7 @@ function CategoriesAPI() {
     useEffect(() =>{
         const getCategories = async () =>{
             alert("inside ctegory api")
-            const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/api/category')
+            const res = await axios.get('api/category')
             console.log('cat',res)
             setCategories(res.data)
         }

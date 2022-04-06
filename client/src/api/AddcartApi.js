@@ -23,7 +23,7 @@ const AddcartApi = async (product) => {
         if(check){
             setCart([...cart, {...product, quantity: 1}])
 
-            await axios.patch('https://mern-ecommerce-forall.herokuapp.com/user/addcart', {cart: [...cart, {...product, quantity: 1}]}, {
+            await axios.patch('user/addcart', {cart: [...cart, {...product, quantity: 1}]}, {
                 headers: {Authorization: token}
             })
 

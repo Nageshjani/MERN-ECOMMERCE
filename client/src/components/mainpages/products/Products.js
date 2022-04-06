@@ -23,10 +23,10 @@ function Products() {
     const deleteProduct = async(id, public_id) => {
         try {
             
-            const destroyImg = axios.post('https://mern-ecommerce-forall.herokuapp.com/api/destroy', {public_id},{ 
+            const destroyImg = axios.post('api/destroy', {public_id},{ 
                 headers: {Authorization: token}
             })
-            const deleteProduct = axios.delete(`https://mern-ecommerce-forall.herokuapp.com/api/products/${id}`, {
+            const deleteProduct = axios.delete(`api/products/${id}`, {
                 headers: {Authorization: token}
             })
 

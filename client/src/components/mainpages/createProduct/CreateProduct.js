@@ -65,7 +65,7 @@ function CreateProduct() {
             let formData = new FormData()
             formData.append('file', file)
 
-            const res = await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/upload', formData, {
+            const res = await axios.post('api/upload', formData, {
                 headers: {'content-type': 'multipart/form-data', Authorization: token}
             })
             setImages(res.data)
@@ -79,7 +79,7 @@ function CreateProduct() {
         try {
             if(!isAdmin) return alert("You're not an admin")
             
-            await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/destroy', {public_id: images.public_id}, {
+            await axios.post('api/destroy', {public_id: images.public_id}, {
                 headers: {Authorization: token}
             })
            
@@ -102,11 +102,11 @@ function CreateProduct() {
             if(!images) return alert("No Image Upload")
 
             if(onEdit){
-                await axios.put(`https://mern-ecommerce-forall.herokuapp.com/api/products/${product._id}`, {...product, images}, {
+                await axios.put(`api/products/${product._id}`, {...product, images}, {
                     headers: {Authorization: token}
                 })
             }else{
-                await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/products', {...product, images}, {
+                await axios.post('api/products', {...product, images}, {
                     headers: {Authorization: token}
                 })
             }

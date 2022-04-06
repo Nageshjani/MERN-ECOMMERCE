@@ -25,7 +25,7 @@ function Cart() {
     },[cart])
 
     const addToCart = async (cart) =>{
-        await axios.patch('https://mern-ecommerce-forall.herokuapp.com/user/addcart', {cart}, {
+        await axios.patch('user/addcart', {cart}, {
             headers: {Authorization: token}
         })
     }
@@ -69,7 +69,7 @@ function Cart() {
     const tranSuccess = async(payment) => {
         const {paymentID, address} = payment;
 
-        await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/payment', {cart, paymentID, address}, {
+        await axios.post('api/payment', {cart, paymentID, address}, {
             headers: {Authorization: token}
         })
         

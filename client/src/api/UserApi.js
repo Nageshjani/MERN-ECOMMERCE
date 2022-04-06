@@ -29,7 +29,7 @@ function UserAPI(token) {
             getUser()
             const getHistory = async () =>{
                 try {
-                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/history', {
+                    const res = await axios.get('user/history', {
                         headers: {Authorization: token}
                     })
                     console.log('hist',res)

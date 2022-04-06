@@ -9,7 +9,7 @@ function ProductsAPI() {
 
     useEffect(() =>{
         const getProducts = async () => {
-            const res = await axios.get(`https://mern-ecommerce-forall.herokuapp.com/api/products`) 
+            const res = await axios.get(`api/products`) 
             setProducts(res.data.products)
             console.log("pro",products)
             
