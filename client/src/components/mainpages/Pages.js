@@ -32,7 +32,7 @@ function Pages() {
             <Route path="/create_product" element={<CreateProduct/>} />
             <Route path="/cart" element={<Cart/>} />
 
-            <Route path="/category" element={isAdmin ?<Categories/>:<NotFound/>} />
+            <Route path="/category" element={<Categories/>} />
            
 
 
