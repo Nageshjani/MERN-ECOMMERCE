@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import {Link} from 'react-router-dom'
 import './history.css'
-axios.defaults.withCredentials=true
+import axios from 'axios'
 
 function OrderHistory() {
     const state = useContext(GlobalState)
