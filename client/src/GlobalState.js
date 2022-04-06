@@ -19,12 +19,12 @@ export const DataProvider = ({children}) =>{
             const refreshToken = async () =>{
                 try{
                     alert('inside refresh token')
-                const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/refresh_token')
-                setToken(res.data.accesstoken)
-                console.log('token',res)
-                setTimeout(() => {
-                    refreshToken()
-                }, 10 * 60 * 1000)
+                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/refresh_token')
+                    setToken(res.data.accesstoken)
+                    console.log('token',res)
+                    setTimeout(() => {
+                        refreshToken()
+                    }, 10 * 60 * 1000)
 
                 }catch(err){
                     alert(err.response.data.msg)
