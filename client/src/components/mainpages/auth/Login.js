@@ -3,6 +3,7 @@ import {Link,useNavigate} from 'react-router-dom'
 import axios from 'axios'
 axios.defaults.withCredentials = true;
 
+
 function Login() {
     const [user, setUser] = useState({
         email:'', password: ''
@@ -22,7 +23,7 @@ function Login() {
 
             localStorage.setItem('firstLogin', true)
             
-            navigate('/')
+            //navigate('/')
         } catch (err) {
             alert(err.response.data.msg)
         }
