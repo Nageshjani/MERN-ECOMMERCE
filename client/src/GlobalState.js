@@ -28,7 +28,6 @@ export const DataProvider = ({children}) =>{
         
                 setToken(res.data.accesstoken)
                 console.log('token',res)
-                navigate('/')
                
     
                 setTimeout(() => {
