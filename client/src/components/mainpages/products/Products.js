@@ -3,25 +3,11 @@ import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
 import './products.css'
 import axios from 'axios'
-axios.defaults.withCredentials=true
 
 
 function Products() {
     const state = useContext(GlobalState)
-    const [products, setProducts] = useState([{
-        "product_id": "Noise ColorFit Pro 2",
-        "title": "colorfit pro 2",
-        "price": 2000,
-        "description": "ColorFit Pro 2 Smartwatch, Magnetic charger and user manual.",
-        "content": "Heart Rate Monitor, Menstrual Cycle Tracking, Sleep & Step Tracking, Multi Sport Modes, Smart Notifications, 1.3\" IPS Touch Screen Display, IP68 Waterproof, Bluetooth v5.0 & Android and iOS compatible, 10 Day Battery - 45 Day Standby",
-        "images": {
-          "public_id": "test/qlh3hxpr98ckr4ua62xg",
-          "url": "https://res.cloudinary.com/dhruvforall/image/upload/v1649077745/test/qlh3hxpr98ckr4ua62xg.png"
-        },
-        "category": "watch",
-        "checked": false,
-        "sold": 0
-    }])
+    const [products, setProducts] =state.productsAPI.products
     const [isAdmin] = state.userAPI.isAdmin
     const [token] = state.token
     const [callback, setCallback] = state.productsAPI.callback

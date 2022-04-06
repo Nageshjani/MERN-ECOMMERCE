@@ -3,7 +3,6 @@ import {useParams} from "react-router-dom";
 import {GlobalState} from '../../../GlobalState'
 import './createProduct.css'
 import axios from 'axios';
-axios.defaults.withCredentials=true
 
 const initialState = {
     product_id: '',
