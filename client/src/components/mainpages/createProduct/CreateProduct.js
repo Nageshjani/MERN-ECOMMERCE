@@ -1,8 +1,9 @@
 import React, {useState, useContext, useEffect} from 'react'
-import axios from 'axios'
 import {useParams} from "react-router-dom";
 import {GlobalState} from '../../../GlobalState'
 import './createProduct.css'
+import axios from 'axios';
+axios.defaults.withCredentials=true
 
 const initialState = {
     product_id: '',
@@ -65,7 +66,7 @@ function CreateProduct() {
             let formData = new FormData()
             formData.append('file', file)
 
-            const res = await axios.post('http://localhost:2500/api/upload', formData, {
+            const res = await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/upload', formData, {
                 headers: {'content-type': 'multipart/form-data', Authorization: token}
             })
             setImages(res.data)
@@ -79,7 +80,7 @@ function CreateProduct() {
         try {
             if(!isAdmin) return alert("You're not an admin")
             
-            await axios.post('http://localhost:2500/api/destroy', {public_id: images.public_id}, {
+            await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/destroy', {public_id: images.public_id}, {
                 headers: {Authorization: token}
             })
            
@@ -102,11 +103,11 @@ function CreateProduct() {
             if(!images) return alert("No Image Upload")
 
             if(onEdit){
-                await axios.put(`http://localhost:2500/api/products/${product._id}`, {...product, images}, {
+                await axios.put(`https://mern-ecommerce-forall.herokuapp.com/api/products/${product._id}`, {...product, images}, {
                     headers: {Authorization: token}
                 })
             }else{
-                await axios.post('http://localhost:2500/api/products', {...product, images}, {
+                await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/products', {...product, images}, {
                     headers: {Authorization: token}
                 })
             }

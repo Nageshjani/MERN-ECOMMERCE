@@ -1,8 +1,9 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
-import axios from 'axios'
 import PaypalButton from './PaypalButton'
 import './cart.css'
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 function Cart() {
     const state = useContext(GlobalState)
@@ -24,7 +25,7 @@ function Cart() {
     },[cart])
 
     const addToCart = async (cart) =>{
-        await axios.patch('http://localhost:2500/user/addcart', {cart}, {
+        await axios.patch('https://mern-ecommerce-forall.herokuapp.com/user/addcart', {cart}, {
             headers: {Authorization: token}
         })
     }
@@ -68,7 +69,7 @@ function Cart() {
     const tranSuccess = async(payment) => {
         const {paymentID, address} = payment;
 
-        await axios.post('http://localhost:2500/api/payment', {cart, paymentID, address}, {
+        await axios.post('https://mern-ecommerce-forall.herokuapp.com/api/payment', {cart, paymentID, address}, {
             headers: {Authorization: token}
         })
         

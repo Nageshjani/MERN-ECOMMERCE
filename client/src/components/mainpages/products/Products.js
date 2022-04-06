@@ -1,8 +1,9 @@
 import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
-import axios from 'axios'
 import './products.css'
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 
 function Products() {
@@ -36,10 +37,10 @@ function Products() {
     const deleteProduct = async(id, public_id) => {
         try {
             
-            const destroyImg = axios.post('http://localhost:2500/api/destroy', {public_id},{ 
+            const destroyImg = axios.post('https://mern-ecommerce-forall.herokuapp.com/api/destroy', {public_id},{ 
                 headers: {Authorization: token}
             })
-            const deleteProduct = axios.delete(`http://localhost:2500/api/products/${id}`, {
+            const deleteProduct = axios.delete(`https://mern-ecommerce-forall.herokuapp.com/api/products/${id}`, {
                 headers: {Authorization: token}
             })
 

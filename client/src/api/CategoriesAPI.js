@@ -10,7 +10,7 @@ function CategoriesAPI() {
         const getCategories = async () =>{
             alert("inside ctegory api")
             const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/api/category')
-            console.log(res)
+            console.log('cat',res)
             setCategories(res.data)
         }
 

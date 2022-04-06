@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
 import './login.css'
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 function Register() {
     const [user, setUser] = useState({
@@ -16,7 +17,7 @@ function Register() {
     const registerSubmit = async e =>{
         e.preventDefault()
         try {
-            await axios.post('http://localhost:2500/user/register', {...user})
+            await axios.post('https://mern-ecommerce-forall.herokuapp.com/user/register', {...user})
 
             localStorage.setItem('firstLogin', true)
 

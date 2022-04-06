@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import {GlobalState} from '../../../../GlobalState'
-import AddcartApi from '../../../../api/AddcartApi'
 
 function BtnRender({product, deleteProduct}) {
     const state = useContext(GlobalState)

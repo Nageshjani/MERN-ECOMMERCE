@@ -1,7 +1,8 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../../GlobalState'
-import axios from 'axios'
 import './categories.css'
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 function Categories() {
     const state = useContext(GlobalState)

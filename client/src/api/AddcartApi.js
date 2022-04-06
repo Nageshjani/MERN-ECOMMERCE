@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import axios from 'axios'
 import { GlobalState } from '../GlobalState'
 import {useContext} from 'react'
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 const AddcartApi = async (product) => {
     
@@ -23,7 +24,7 @@ const AddcartApi = async (product) => {
         if(check){
             setCart([...cart, {...product, quantity: 1}])
 
-            await axios.patch('http://localhost:2500/user/addcart', {cart: [...cart, {...product, quantity: 1}]}, {
+            await axios.patch('https://mern-ecommerce-forall.herokuapp.com/user/addcart', {cart: [...cart, {...product, quantity: 1}]}, {
                 headers: {Authorization: token}
             })
 

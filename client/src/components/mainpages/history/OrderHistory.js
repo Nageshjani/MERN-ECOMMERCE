@@ -1,8 +1,9 @@
 import React, {useContext, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
 import './history.css'
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 function OrderHistory() {
     const state = useContext(GlobalState)
@@ -15,13 +16,13 @@ function OrderHistory() {
         if(token){
             const getHistory = async() =>{
                 if(isAdmin){
-                    const res = await axios.get('http://localhost:2500/api/payment', {
+                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/api/payment', {
                         headers: {Authorization: token}
                     })
                     console.log('payment',res)
                     setHistory(res.data)
                 }else{
-                    const res = await axios.get('http://localhost:2500/user/history', {
+                    const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/history', {
                         headers: {Authorization: token}
                     })
                     setHistory(res.data)
