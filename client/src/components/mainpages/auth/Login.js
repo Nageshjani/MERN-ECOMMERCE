@@ -23,7 +23,7 @@ function Login() {
 
             localStorage.setItem('firstLogin', true)
             
-            //navigate('/')
+            navigate('/')
         } catch (err) {
             alert(err.response.data.msg)
         }
