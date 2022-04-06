@@ -22,6 +22,7 @@ export const DataProvider = ({children}) =>{
         if(firstLogin){
             const refreshToken = async () =>{
                 alert('inside refresh token')
+                setCallback(!callback)
                 const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/refresh_token')
         
                 setToken(res.data.accesstoken)
