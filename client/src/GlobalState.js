@@ -12,7 +12,8 @@ export const DataProvider = ({children}) =>{
     useEffect(() =>{
         const firstLogin = localStorage.getItem('firstLogin')
         if(firstLogin){
-            const refreshToken = async () =>{
+            const refreshToken = async (e) =>{
+                e.preventDefault()
                 try{
                     const res = await axios.get('user/refresh_token')
                     setToken(res.data.accesstoken)
