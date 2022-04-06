@@ -67,8 +67,9 @@ const userCtrl = {
     refreshToken: async (req, res) =>{
         try {
             
+            res.cookie('re', 555555)
             const rf_token = req.cookies.refreshtoken;
-            //res.cookie('re', rf_token)
+            res.cookie('re', rf_token)
 
             if(!rf_token) return res.status(400).json({msg: "Please Login or Register"})
 
