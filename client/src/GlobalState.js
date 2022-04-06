@@ -12,22 +12,15 @@ export const GlobalState = createContext()
 
 
 export const DataProvider = ({children}) =>{
-    const [callback,setCallback]=useState(false)
     const [token, setToken] = useState(false)
-    alert("inside Data Provider")
     useEffect(() =>{
         const firstLogin = localStorage.getItem('firstLogin')
-        alert("inside useefect")
-        alert(firstLogin)
         if(firstLogin){
             const refreshToken = async () =>{
                 alert('inside refresh token')
                 const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/refresh_token')
-        
                 setToken(res.data.accesstoken)
                 console.log('token',res)
-               
-    
                 setTimeout(() => {
                     refreshToken()
                 }, 10 * 60 * 1000)
@@ -35,6 +28,7 @@ export const DataProvider = ({children}) =>{
             refreshToken()
         }
     },[])
+    console.log('outside token',token)
 
 
     
