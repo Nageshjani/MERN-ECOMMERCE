@@ -5,15 +5,13 @@ import CategoriesAPI from './api/CategoriesAPI'
 import axios from 'axios'
 axios.defaults.withCredentials=true
 
-export const GlobalState = createContext()
 
 export const DataProvider = ({children}) =>{
     const [token, setToken] = useState(false)
     useEffect(() =>{
         const firstLogin = localStorage.getItem('firstLogin')
         if(firstLogin){
-            const refreshToken = async e =>{
-                e.preventDefault()
+            const refreshToken = async () =>{
                 try{
                     const res = await axios.get('user/refresh_token')
                     setToken(res.data.accesstoken)

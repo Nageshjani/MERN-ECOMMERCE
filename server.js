@@ -7,6 +7,7 @@ const path = require('path')
 
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
+
 const cors = require("cors");
 const fileupload = require('express-fileupload')
 app.use(fileupload({
@@ -26,9 +27,13 @@ app.use(cors({
 
     origin:"https://mern-ecommerce-forall.herokuapp.com",
     credentials: true,
-})
-)
-
+}))
+app.use(express.json());
+app.use('/user', require('./routes/userRouter'))
+app.use('/api', require('./routes/upload'))
+app.use('/api', require('./routes/productRouter'))
+app.use('/api', require('./routes/paymentRouter'))
+app.use('/api', require('./routes/categoryRouter'))
 
 
 mongoose
@@ -37,7 +42,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-  if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'))
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
@@ -45,14 +50,9 @@ mongoose
 }  
 
 //app.use(cors());
-app.use(express.json());
-app.use('/user', require('./routes/userRouter'))
-app.use('/api', require('./routes/upload'))
-app.use('/api', require('./routes/productRouter'))
-app.use('/api', require('./routes/paymentRouter'))
-app.use('/api', require('./routes/categoryRouter'))
 
-app.listen(process.env.PORT || 2500, () => {
+
+app.listen(process.env.PORT || 2662, () => {
   console.log("Backend server is running!",process.env.PORT);
 });
 
