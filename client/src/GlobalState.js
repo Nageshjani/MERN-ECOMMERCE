@@ -22,7 +22,7 @@ export const DataProvider = ({children}) =>{
                 const res = await axios.get('https://mern-ecommerce-forall.herokuapp.com/user/refresh_token')
         
                 setToken(res.data.accesstoken)
-                console.log('res',res)
+                console.log('token',res)
                
     
                 setTimeout(() => {
