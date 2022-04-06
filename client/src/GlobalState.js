@@ -6,7 +6,6 @@ import CategoriesAPI from './api/CategoriesAPI'
 
 
 import axios from 'axios'
-import { Navigate } from 'react-router-dom'
 axios.defaults.withCredentials=true
 
 
