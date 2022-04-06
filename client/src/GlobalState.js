@@ -1,5 +1,4 @@
 import React, {createContext, useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
 import ProductsAPI from './api/ProductsAPI'
 import UserApi from './api/UserApi'
 import CategoriesAPI from './api/CategoriesAPI'
@@ -15,7 +14,6 @@ export const GlobalState = createContext()
 export const DataProvider = ({children}) =>{
     const [callback,setCallback]=useState(false)
     const [token, setToken] = useState(false)
-    const navigate=useNavigate()
     alert("inside Data Provider")
     useEffect(() =>{
         const firstLogin = localStorage.getItem('firstLogin')
