@@ -11,7 +11,6 @@ function Header() {
     const state = useContext(GlobalState)
     const [isLogged] = state.userAPI.isLogged
     const [isAdmin] = state.userAPI.isAdmin
-    console.log('admin',isAdmin)
     const [cart] = state.userAPI.cart
     const [menu, setMenu] = useState(false)
 
@@ -52,7 +51,7 @@ function Header() {
 
             <div className="logo">
                 <h1>
-                    <Link to="/">{isAdmin ? 'Admin' : 'DevAT Shop'}</Link>
+                    <Link to="/">{isAdmin ? 'Admin' : 'E-COMMERCE SHOP'}</Link>
                 </h1>
             </div>
 

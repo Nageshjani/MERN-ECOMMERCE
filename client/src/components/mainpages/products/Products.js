@@ -10,7 +10,6 @@ import axios from 'axios'
 function Products() {
     const state = useContext(GlobalState)
     const [products, setProducts] =state.productsAPI.products
-    console.log('product',products)
     const [isAdmin] = state.userAPI.isAdmin
     const [token] = state.token
     const [callback, setCallback] = state.productsAPI.callback
