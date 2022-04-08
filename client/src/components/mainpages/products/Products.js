@@ -3,6 +3,7 @@ import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
 import './products.css'
 import Filters from './Filter'
+import LoadMore from './LoadMore'
 import axios from 'axios'
 
 
@@ -80,7 +81,7 @@ function Products() {
         </div>
 
        
-       
+        <LoadMore />
         </>
     )
 }
