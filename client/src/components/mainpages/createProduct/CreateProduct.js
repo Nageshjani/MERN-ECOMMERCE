@@ -17,7 +17,7 @@ const initialState = {
 function CreateProduct() {
     const state = useContext(GlobalState)
     const [product, setProduct] = useState(initialState)
-    const [categories] = []
+    const [categories] = state.categoriesAPI.categories
     const [images, setImages] = useState(false)
 
 
@@ -161,11 +161,18 @@ function CreateProduct() {
                     value={product.content} rows="7" onChange={handleChangeInput} />
                 </div>
                 <div className="row">
-                    <label htmlFor="content">Category</label>
-                    <textarea type="text" name="category" id="category" required
-                    value={product.category} rows="7" onChange={handleChangeInput} />
+                    <label htmlFor="categories">Categories: </label>
+                    <select name="category" value={product.category} onChange={handleChangeInput} >
+                        <option value="">Please select a category</option>
+                        {
+                            categories.map(category => (
+                                <option value={category._id} key={category._id}>
+                                    {category.name}
+                                </option>
+                            ))
+                        }
+                    </select>
                 </div>
-
                 
 
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
