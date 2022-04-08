@@ -37,7 +37,6 @@ function CreateProduct() {
             products.forEach(product => {
                 if(product._id === param.id) {
                     setProduct(product)
-                    console.log('p1',product)
                     setImages(product.images)
                 }
             })
@@ -93,7 +92,6 @@ function CreateProduct() {
         const {name, value} = e.target
         setProduct({...product, [name]:value})
     }
-    //console.log('p2',product)
 
     const handleSubmit = async e =>{
         e.preventDefault()

@@ -14,13 +14,9 @@ function UserAPI(token) {
                     const res = await axios.get('user/infor', {
                         headers: {Authorization: token}
                     })
-                   
-
                     setIsLogged(true)
                     res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false)
-
                     setCart(res.data.cart)
-
                 } catch (err) {
                     alert(err.response.data.msg)
                 }
@@ -32,10 +28,7 @@ function UserAPI(token) {
                     const res = await axios.get('user/history', {
                         headers: {Authorization: token}
                     })
-                    console.log('hist',res)
                     setHistory(res.data)
-
-                   
 
                 } catch (err) {
                     alert(err.response.data.msg)
@@ -60,7 +53,7 @@ function UserAPI(token) {
         if(check){
             setCart([...cart, {...product, quantity: 1}])
 
-            await axios.patch('http://localhost:2500/user/addcart', {cart: [...cart, {...product, quantity: 1}]}, {
+            await axios.patch('user/addcart', {cart: [...cart, {...product, quantity: 1}]}, {
                 headers: {Authorization: token}
             })
 

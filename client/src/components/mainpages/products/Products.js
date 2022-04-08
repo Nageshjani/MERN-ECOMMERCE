@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
 import './products.css'
+import Filters from './Filter'
 import axios from 'axios'
 
 
@@ -57,6 +58,7 @@ function Products() {
     
     return (
         <>
+        <Filters />
         
         
         {

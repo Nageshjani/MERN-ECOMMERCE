@@ -7,9 +7,7 @@ function CategoriesAPI() {
 
     useEffect(() =>{
         const getCategories = async () =>{
-            alert("inside ctegory api")
             const res = await axios.get('api/category')
-            console.log('cat',res)
             setCategories(res.data)
         }
 

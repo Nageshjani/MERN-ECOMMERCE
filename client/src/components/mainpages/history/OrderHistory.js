@@ -18,7 +18,6 @@ function OrderHistory() {
                     const res = await axios.get('api/payment', {
                         headers: {Authorization: token}
                     })
-                    console.log('payment',res)
                     setHistory(res.data)
                 }else{
                     const res = await axios.get('user/history', {

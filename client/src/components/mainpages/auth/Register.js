@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import './login.css'
 import axios from 'axios'
-axios.defaults.withCredentials=true
 
 function Register() {
     const [user, setUser] = useState({
@@ -18,10 +17,7 @@ function Register() {
         e.preventDefault()
         try {
             await axios.post('user/register', {...user})
-
             localStorage.setItem('firstLogin', true)
-
-            
             window.location.href = "/";
         } catch (err) {
             alert(err.response.data.msg)

@@ -18,10 +18,7 @@ function Login() {
         e.preventDefault()
         try {
             const  res=await axios.post('user/login', {...user})
-            console.log('res',res)
-
             localStorage.setItem('firstLogin', true)
-            
             navigate('/')
         } catch (err) {
             alert(err.response.data.msg)

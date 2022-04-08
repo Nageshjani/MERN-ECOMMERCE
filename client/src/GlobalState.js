@@ -15,7 +15,6 @@ export const DataProvider = ({children}) =>{
                 try{
                     const res = await axios.get('user/refresh_token')
                     setToken(res.data.accesstoken)
-                    console.log('token',res)
                     setTimeout(() => {
                         refreshToken()
                     }, 10 * 60 * 1000)
