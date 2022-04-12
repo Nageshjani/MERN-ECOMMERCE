@@ -1,4 +1,4 @@
-# MERN Stack - Ecommerce
+# MERN STACK- E-COMMERCE 
 > MERN STACK , REACT CONTEXT API FOR STATE MANAGEMENT 
 
 ## DEMO: https://mern-ecommerce-forall.herokuapp.com/
