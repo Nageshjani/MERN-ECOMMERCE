@@ -28,8 +28,19 @@
 
 ### User interface 
 
-![alt](https://res.cloudinary.com/dhruvforall/image/upload/v1649740797/UI/Screenshot_12_ojbqrn.png)
+![alt](https://res.cloudinary.com/dhruvforall/image/upload/v1649746583/UI/Screenshot_30_ubor8u.png)
+
+![alt](https://res.cloudinary.com/dhruvforall/image/upload/v1649746686/UI/Screenshot_32_jzvgwp.png)
+
+
+
 
 ### Admin interface 
 
-![alt](https://res.cloudinary.com/dhruvforall/image/upload/v1649741071/UI/Screenshot_14_luq4oi.png)
+![alt](https://res.cloudinary.com/dhruvforall/image/upload/v1649746163/UI/Screenshot_20_q9vahi.png)
+
+
+![alt](https://res.cloudinary.com/dhruvforall/image/upload/v1649746353/UI/Screenshot_24_idecr9.png)
+
+
+![alt](https://res.cloudinary.com/dhruvforall/image/upload/v1649746238/UI/Screenshot_22_cgaopo.png)
