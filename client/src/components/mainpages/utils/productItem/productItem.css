@@ -52,10 +52,12 @@
 #btn_buy{
     background: rgb(28, 22, 22);
     margin-right: 5px;
+    text-decoration: none;
 }
 #btn_view{
     background: rgb(8, 32, 71);
     margin-left: 5px;
+    text-decoration: none;
 }
 .product_card input{
     position: absolute;
